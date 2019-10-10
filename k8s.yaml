@@ -1,0 +1,42 @@
+#- hosts: master,node
+#  remote_user: root
+#  tasks:
+#   - name: 关闭Selinux
+#     lineinfile:
+#               path: /etc/selinux/config
+#               regexp: '^SELINUX='
+#               line: 'SELINUX=disabled'
+#
+#   - name: 关闭Firewall
+#     service: 
+#            name: firewalld 
+#            state: stopped 
+#            enabled: no
+#   
+#- hosts: master,node
+#  remote_user: root
+#  roles:
+#       - ssl
+
+#- hosts: ha
+#  remote_user: root
+#  roles:
+#       - haproxy
+
+#- hosts: master
+#  remote_user: root
+#  roles:
+#       - etcd
+#       - apiserver
+#       - config
+#       - controller-manager
+#       - scheduler
+#       - master-other
+
+#- hosts: node
+#  remote_user: root
+#  roles:
+#       - docker
+#       - flanneld
+#       - kubelet
+#       - proxy
