@@ -1,5 +1,5 @@
 #!/bin/bash
-LOCAL_IP=`ip addr|grep ens33|grep inet|awk '{print $2}'|cut -c 1-15`
+LOCAL_IP=`ip addr|grep eth0|grep inet|awk -F "[/ ]+" '{print $3}'`
 
 ##配置kube-proxy
 cat << EOF > /etc/kubernetes/proxy-config.yaml
